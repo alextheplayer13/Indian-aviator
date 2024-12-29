@@ -1,0 +1,13 @@
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50),
+    balance DECIMAL(10, 2)
+);
+
+CREATE TABLE transactions (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    amount DECIMAL(10, 2),
+    type ENUM('deposit', 'withdrawal', 'bet', 'win'),
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+);
